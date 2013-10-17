@@ -1,0 +1,17 @@
+{
+  "name": "ember-autocomplete",
+  "version": "0.0.1",
+  "description": "Trello inspired input autocomplete",
+  "dependencies": {
+    "kelonye/ember": "*",
+    "kelonye/ember-overlay": "*"
+  },
+  "main": "lib/index.js",
+  "scripts": [
+    "lib/index.js"
+  ],
+  "styles": [
+    "lib/style.css"
+  ],
+  "license": "MIT"
+}

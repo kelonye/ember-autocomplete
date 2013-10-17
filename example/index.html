@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='../public/public.css' rel='stylesheet' media='screen'>
+  </head>
+  <body>
+    <style>
+      body, input{
+        font-size: 20px;
+      }
+      input{
+        width: 300px;
+        outline: none;
+        border: none;
+        background: #eee;
+        padding: 5px;
+      }
+      div{
+        text-transform: capitalize;
+      }
+    </style>
+    <script src='../public/public.js'></script>
+    <script type='text/javascript'>
+      var months = [
+        'january',
+        'february',
+        'march',
+        'april',
+        'may',
+        'june',
+        'july',
+        'august',
+        'september',
+        'october',
+        'november',
+        'december'
+      ];
+
+      var autocomplete = require('ember-autocomplete');
+      var App = Em.Application.create();
+      App.IndexController = Em.Controller.extend({
+        content: function(){
+          var value = this.get('searchterm')
+          return months.filter(function(month){
+            if (!value) return true;
+            return month.match(value.trim().toLowerCase());
+          });
+        }.property('searchterm')
+      });
+      App.IndexView = Em.TextField.extend(autocomplete, {
+        valueBinding: 'controller.searchterm',
+        placeholder: 'Search months e.g. jan'
+      });
+      App.Router.map(function(){});
+    </script>
+  </body>
+</html>
