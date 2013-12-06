@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "Trello inspired input autocomplete",
   "dependencies": {
-    "kelonye/ember": "*",
-    "kelonye/ember-overlay": "*"
+    "kelonye/ember": "1.0.0-rc6",
+    "kelonye/ember-overlay": "0.0.1"
   },
   "main": "lib/index.js",
   "scripts": [
